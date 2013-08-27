@@ -437,7 +437,7 @@
     }
     
     if (!self.draggedOffStartDay && [self.draggingStartDay isEqual:touchedView.day]) {
-        self.selectedRange = [[DSLCalendarRange alloc] initWithStartDay:touchedView.day endDay:touchedView.day];
+        self.selectedRange = [self.delegate calendarView:self didDragToDay:touchedView.day selectingRange:[[DSLCalendarRange alloc] initWithStartDay:touchedView.day endDay:touchedView.day]];
     }
     
     self.draggingStartDay = nil;
